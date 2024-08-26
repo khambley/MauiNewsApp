@@ -4,19 +4,26 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiNewsApp"
+    xmlns:views="clr-namespace:MauiNewsApp.Views"
     Shell.FlyoutBehavior="Flyout">
 
-    <FlyoutItem Title="Home"
-                Icon="{StaticResource HomeIcon}">
-            <ShellContent Title="Headlines"
-                          Icon="{StaticResource HeadlinesIcon}">
-                <ContentPage Title="Headlines" />
-            </ShellContent>
-        <Tab Title="News"
-             Icon="{StaticResource NewsIcon}">
-            <ContentPage Title="Local" />
-            <ContentPage Title="Global" />
-        </Tab>
+    <FlyoutItem Title="Home" Icon="{StaticResource HomeIcon}">
+        <ShellContent Title="Headlines"
+                      Route="headlines"
+                      Icon="{StaticResource HeadlinesIcon}"
+                      ContentTemplate="{DataTemplate views:HeadlinesView}" />
+    <Tab Title="News"
+            Route="news"
+            Icon="{StaticResource NewsIcon}">
+
+        <ShellContent Title="Local"
+                        Route="local"
+                        ContentTemplate="{DataTemplate views:HeadlinesView}" />
+
+        <ShellContent Title="Global"
+                        Route="global"
+                        ContentTemplate="{DataTemplate views:HeadlinesView}" />
+    </Tab>
     </FlyoutItem>
 
     <FlyoutItem Title="Settings"

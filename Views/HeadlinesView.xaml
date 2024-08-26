@@ -9,7 +9,8 @@
              x:DataType="viewModels:HeadlinesViewModel"
              Title="Home"
              Padding="14">
-    <CollectionView ItemsSource="{Binding CurrentNews.Articles}">
+
+        <CollectionView ItemsSource="{Binding CurrentNews.Articles}">
         <CollectionView.EmptyView>
             <Label Text="Loading" />
         </CollectionView.EmptyView>
@@ -25,4 +26,7 @@
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
+
+
+    
 </ContentPage>

@@ -2,7 +2,6 @@
 using System.Net.Http.Json;
 using System.Runtime.Intrinsics.Arm;
 using MauiNewsApp.Models;
-using static Android.Provider.Settings;
 
 namespace MauiNewsApp.Services
 {
