@@ -72,9 +72,13 @@
 	<ItemGroup>
 	  <None Remove="ViewModels\" />
 	  <None Remove="Views\" />
+	  <None Remove="Resources\Fonts\FontAwesome6Pro-Solid-900.otf" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Views\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Fonts\FontAwesome6Pro-Solid-900.otf" />
 	</ItemGroup>
 </Project>
