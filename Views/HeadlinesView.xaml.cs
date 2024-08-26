@@ -1,9 +1,26 @@
-﻿namespace MauiNewsApp.Views;
+﻿using MauiNewsApp.ViewModels;
+
+namespace MauiNewsApp.Views;
 
 public partial class HeadlinesView : ContentPage
 {
-	public HeadlinesView()
+    readonly HeadlinesViewModel viewModel;
+
+    public HeadlinesView(HeadlinesViewModel viewModel)
 	{
-		InitializeComponent();
+        this.viewModel = viewModel;
+        InitializeComponent();
+        Task.Run(async () => await Initialize(GetScopeFromRoute()));
 	}
+    private async Task Initialize(string scope)
+    {
+        BindingContext = viewModel;
+        await viewModel.Initialize(scope);
+    }
+
+    private string GetScopeFromRoute()
+    {
+        var route = Shell.Current.CurrentState.Location.OriginalString.Split("/").LastOrDefault();
+        return route;
+    }
 }
